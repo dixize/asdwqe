@@ -1,0 +1,77 @@
+:root {
+    --primary: #ff4f12;
+    --bg-dark: #00040a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
+    --radius-l: 24px;
+    --radius-btn: 50px;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg-dark); color: #fff; font-family: 'Segoe UI', Roboto, sans-serif; overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.main-header { padding: 30px 0; border-bottom: 1px solid var(--border); margin-bottom: 60px; }
+.brand { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.5px; }
+.office-tag { color: var(--primary); font-size: 0.7rem; font-weight: bold; letter-spacing: 2px; margin-left: 15px; padding-left: 15px; border-left: 1px solid #333; }
+
+/* Hero */
+.hero-section { min-height: 100vh; background: radial-gradient(circle at 10% 20%, #001a4d 0%, #00040a 60%); padding-bottom: 80px; }
+h1 { font-size: clamp(3rem, 10vw, 6.5rem); line-height: 0.85; margin: 0; text-transform: uppercase; font-weight: 900; }
+.hero-content p { font-size: 1.2rem; opacity: 0.7; max-width: 550px; margin: 30px 0 50px; line-height: 1.4; }
+
+/* Rounded Buttons */
+.btn-rounded { 
+    background: var(--primary); color: #fff; border: none; padding: 18px 45px; 
+    border-radius: var(--radius-btn); font-weight: bold; cursor: pointer; 
+    text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;
+}
+.btn-rounded:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(255, 79, 18, 0.4); }
+
+/* Navigation Cards */
+.solution-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 60px; }
+.solution-card { 
+    background: var(--card-bg); border: 1px solid var(--border); padding: 40px 25px; 
+    border-radius: var(--radius-l); cursor: pointer; transition: 0.4s; position: relative; overflow: hidden;
+}
+.solution-card:hover { background: #fff; color: #000; transform: translateY(-10px); }
+.card-num { font-size: 3rem; font-weight: 900; opacity: 0.05; position: absolute; top: 10px; right: 20px; }
+.solution-card h3 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin: 0; position: relative; }
+
+/* Territory */
+.territory-section { padding: 100px 0; border-top: 1px solid var(--border); }
+.title-decor { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 60px; text-align: center; }
+.t-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.feature-item { padding: 40px; background: rgba(255,255,255,0.02); border-radius: var(--radius-l); border: 1px solid var(--border); }
+.feature-item h4 { color: var(--primary); margin-top: 0; font-size: 1.2rem; }
+.feature-item p { opacity: 0.6; font-size: 0.9rem; line-height: 1.6; }
+
+/* Modal - Fix for Mobile and PC overlap */
+.modal-overlay { position: fixed; inset: 0; background: #000; z-index: 2000; overflow-y: auto; display: none; padding: 20px; }
+.modal-overlay.visible { display: block; }
+.modal-window { max-width: 1200px; margin: 40px auto; position: relative; }
+.btn-close { position: sticky; top: 0; float: right; background: var(--primary); color: #fff; border: none; padding: 12px 25px; border-radius: 50px; cursor: pointer; font-weight: bold; z-index: 10; }
+
+.content-flex { display: flex; flex-direction: column; gap: 50px; margin-top: 40px; }
+
+/* PC Layout for Modal */
+@media (min-width: 1024px) {
+    .content-flex { flex-direction: row; align-items: flex-start; }
+    .side-info { flex: 0 0 450px; position: sticky; top: 40px; }
+    .side-visual { flex: 1; }
+}
+
+/* Square Photo Grid */
+.photo-mosaic { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
+.p-item { text-align: left; }
+.p-img { aspect-ratio: 1/1; border-radius: 16px; overflow: hidden; background: #111; border: 1px solid #222; margin-bottom: 10px; }
+.p-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+.p-item:hover img { transform: scale(1.1); }
+.p-cap { font-size: 0.75rem; opacity: 0.5; text-transform: uppercase; line-height: 1.2; }
+
+/* Partner labels */
+.partner-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.chip { font-size: 0.65rem; padding: 6px 12px; border: 1px solid #333; border-radius: 50px; opacity: 0.6; font-weight: bold; }
+
+.hidden { display: none; }

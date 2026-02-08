@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проектный офис | Ростелеком</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="container">
+            <header class="main-header">
+                <div class="logo-text">
+                    <span class="brand">Ростелеком</span>
+                    <span class="office-tag">ПРОЕКТНЫЙ ОФИС</span>
+                </div>
+            </header>
+
+            <div class="hero-content">
+                <h1 class="animate__animated animate__fadeInUp">Цифровая<br>территория</h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">
+                    Комплексная экосистема автоматизации: от частных сетей связи до роботизированных производственных линий.
+                </p>
+                <div class="hero-actions animate__animated animate__fadeInUp animate__delay-2s">
+                    <button class="btn-rounded btn-glow" onclick="document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})">Перейти к решениям</button>
+                </div>
+            </div>
+
+            <nav id="catalog" class="solution-grid">
+                <div class="solution-card" onclick="openSlide('robotics')">
+                    <div class="card-num">01</div>
+                    <h3>Роботизация</h3>
+                </div>
+                <div class="solution-card" onclick="openSlide('quality')">
+                    <div class="card-num Gemini-live-fix">02</div>
+                    <h3>Контроль качества</h3>
+                </div>
+                <div class="solution-card" onclick="openSlide('security')">
+                    <div class="card-num">03</div>
+                    <h3>Средства охраны</h3>
+                </div>
+                <div class="solution-card" onclick="openSlide('eco')">
+                    <div class="card-num">04</div>
+                    <h3>Экомониторинг</h3>
+                </div>
+                <div class="solution-card" onclick="openSlide('equipment')">
+                    <div class="card-num">05</div>
+                    <h3>Оборудование</h3>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <section id="territory" class="territory-section">
+        <div class="container">
+            <h2 class="title-decor">Инфраструктура территории</h2>
+            <div class="t-features">
+                <div class="feature-item">
+                    <h4>Private LTE/5G</h4>
+                    <p>Создание выделенной сети для бесперебойной работы беспилотников и IoT-датчиков в любой точке предприятия.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Кибербезопасность</h4>
+                    <p>Защита промышленного контура (АСУ ТП) и полное соответствие требованиям КИИ ФЗ-187.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Видеоаналитика</h4>
+                    <p>Интеллектуальный контроль ТБ, детекция дефектов и мониторинг присутствия персонала в опасных зонах.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Промышленный IoT</h4>
+                    <p>Единая платформа мониторинга состояния оборудования для перехода к предиктивному обслуживанию.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Сквозная аналитика</h4>
+                    <p>Объединение всех данных производства в ситуационный центр для оперативного управления активами.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Энергоэффективность</h4>
+                    <p>Автоматизированное управление освещением и ресурсами, снижающее операционные расходы до 30%.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <div id="modal" class="modal-overlay hidden">
+        <div class="modal-window">
+            <button class="btn-close" onclick="closeSlide()">✕ ЗАКРЫТЬ</button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
